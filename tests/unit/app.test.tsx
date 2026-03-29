@@ -7,6 +7,10 @@ vi.mock('../../src/lib/analytics', () => ({
   trackEvent: vi.fn(),
 }));
 
+vi.mock('../../src/components/ui/InstallPrompt', () => ({
+  InstallPrompt: () => <div data-testid="install-prompt" />,
+}));
+
 describe('App', () => {
   it('renders the primary agency sections', () => {
     const { container } = render(

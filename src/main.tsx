@@ -7,6 +7,14 @@ import { ExperienceProvider } from './providers/experience-provider.tsx';
 
 initializeRuntimeGuards();
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {
+      // Ignore registration failures in unsupported or restricted environments.
+    });
+  });
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ExperienceProvider>

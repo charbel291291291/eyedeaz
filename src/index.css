@@ -43,7 +43,7 @@
 
 @layer utilities {
   .app-shell {
-    @apply relative min-h-screen;
+    @apply relative min-h-screen pb-28 md:pb-0;
   }
 
   .skip-link {
@@ -206,7 +206,21 @@
 }
 
 @media (max-width: 767px) {
+  .section-shell {
+    @apply px-5 py-16;
+  }
+
   .hero-title {
     font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+
+  .hero-description {
+    @apply text-base leading-7;
+  }
+
+  .mobile-cta-bar {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
   }
 }
