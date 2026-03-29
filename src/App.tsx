@@ -8,54 +8,10 @@ import { Navbar } from './components/ui/Navbar';
 import siteContent from './content/site-content.json';
 import { trackEvent } from './lib/analytics';
 
-const CANONICAL_HOST = 'eyedeaz227.vercel.app';
-
 export default function App() {
-  const debugEnabled =
-    typeof window !== 'undefined' &&
-    new URLSearchParams(window.location.search).get('debug') === '1';
-
-  const debugInfo =
-    typeof window !== 'undefined'
-      ? {
-          href: window.location.href,
-          referrer: document.referrer || '(empty)',
-          isFramed: window.top !== window.self,
-          userAgent: navigator.userAgent,
-        }
-      : null;
-
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const isCanonicalHost =
-      window.location.hostname === CANONICAL_HOST ||
-      window.location.hostname === 'localhost' ||
-      window.location.hostname === '127.0.0.1';
-
-    if (!isCanonicalHost && window.location.hostname.endsWith('.vercel.app')) {
-      const canonicalUrl = new URL(window.location.href);
-      canonicalUrl.hostname = CANONICAL_HOST;
-      window.location.replace(canonicalUrl.toString());
-      return;
-    }
-
-    if (window.top !== window.self) {
-      try {
-        window.top!.location.replace(window.location.href);
-      } catch {
-        document.body.innerHTML =
-          '<main style="font-family:Segoe UI,system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;background:#020617;color:#fff;padding:24px;text-align:center"><div><h1 style="margin:0 0 12px">Open eyedeaz directly</h1><p style="margin:0;color:#cbd5e1">This page cannot run inside a frame. Open it in a normal browser tab.</p></div></main>';
-      }
-      return;
-    }
-
     trackEvent('page_view');
-
-    if (debugEnabled && debugInfo) {
-      console.info('eyedeaz-debug', debugInfo);
-    }
-  }, [debugEnabled, debugInfo]);
+  }, []);
 
   return (
     <div className="app-shell">

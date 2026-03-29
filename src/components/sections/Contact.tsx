@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Mail, MapPin, MessageCircle, PhoneCall } from 'lucide-react';
 import { submitLead } from '../../lib/api';
 import { trackEvent } from '../../lib/analytics';
+import { WHATSAPP_URL } from '../../lib/site-config';
 
 type ContactProps = {
   headline: string;
@@ -27,8 +28,6 @@ export function Contact({ headline, description, brand }: ContactProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const whatsappUrl = 'https://wa.me/96170126177';
-
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -173,7 +172,7 @@ export function Contact({ headline, description, brand }: ContactProps) {
                 </a>
                 <a
                   className="button-secondary"
-                  href={whatsappUrl}
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => trackEvent('contact_cta_clicked', { type: 'whatsapp' })}

@@ -1,7 +1,6 @@
 import { Router } from 'express';
-import { env } from '../config/env';
 import { sendApiError, sendApiSuccess } from '../lib/responses';
-import { getSupabaseServerClient } from '../lib/supabase';
+import { submitLead } from '../services/lead-submission';
 import { leadSchema } from '../validation/lead';
 
 export const leadsRouter = Router();
@@ -22,38 +21,15 @@ leadsRouter.post('/', async (req, res) => {
   }
 
   try {
-    const supabase = getSupabaseServerClient();
-    const leadRecord = {
+    await submitLead({
       name: payload.name,
       email: payload.email,
-      phone: payload.phone ?? null,
+      phone: payload.phone,
       message: payload.message,
-      page: payload.page ?? null,
-      session_id: req.eyedeazSessionId ?? null,
-      user_agent: req.get('user-agent') ?? null,
-    };
-
-    const { error } = await supabase.from(env.SUPABASE_LEADS_TABLE).insert(leadRecord as never);
-
-    if (error) {
-      throw error;
-    }
-
-    if (env.LEAD_WEBHOOK_URL) {
-      fetch(env.LEAD_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: payload.name,
-          email: payload.email,
-          phone: payload.phone ?? null,
-          message: payload.message,
-          page: payload.page ?? null,
-        }),
-      }).catch(() => {
-        // Non-blocking webhook.
-      });
-    }
+      page: payload.page,
+      sessionId: req.eyedeazSessionId ?? null,
+      userAgent: req.get('user-agent') ?? null,
+    });
 
     sendApiSuccess(res, {
       ok: true,
