@@ -7,7 +7,7 @@ import { ExperienceProvider } from './providers/experience-provider.tsx';
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => {
-      // Ignore registration failures in development.
+      // Ignore registration failures.
     });
   });
 }

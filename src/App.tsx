@@ -4,7 +4,6 @@ import { Contact } from './components/sections/Contact';
 import { Hero } from './components/sections/Hero';
 import { Services } from './components/sections/Services';
 import { Work } from './components/sections/Work';
-import { InstallPrompt } from './components/ui/InstallPrompt';
 import { Navbar } from './components/ui/Navbar';
 import siteContent from './content/site-content.json';
 import { trackEvent } from './lib/analytics';
@@ -65,7 +64,6 @@ export default function App() {
       </a>
 
       <Navbar items={siteContent.navigation} />
-      <InstallPrompt />
 
       <main>
         <Hero
