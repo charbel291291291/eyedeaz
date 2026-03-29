@@ -70,7 +70,7 @@ export function Navbar({ items }: { items: NavItem[] }) {
                 <img src="/eyedeaz-logo.png" alt="eyedeaz logo" className="h-11 w-11 rounded-2xl object-cover shadow-[0_8px_24px_rgba(0,0,0,0.35)]" />
                 <div>
                   <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white">eyedeaz</div>
-                  <div className="text-xs text-slate-400">Agency PWA Studio</div>
+                  <div className="text-xs text-slate-400">Build. Brand. Grow.</div>
                 </div>
               </button>
 
