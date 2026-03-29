@@ -1,0 +1,117 @@
+{
+  "brand": {
+    "name": "eyedeaz",
+    "tagline": "Modern branding, websites, and growth-focused digital experiences for businesses ready to stand out.",
+    "email": "eyedeaz227@gmail.com",
+    "phone": "70-126177",
+    "location": "Jounieh"
+  },
+  "navigation": [
+    { "label": "Services", "href": "#services" },
+    { "label": "Work", "href": "#work" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "eyebrow": "Creative digital agency in Jounieh",
+    "title": "We build modern brands, websites, and digital experiences that turn attention into customers.",
+    "description": "eyedeaz helps ambitious businesses launch polished digital experiences with clean design, strong messaging, mobile-first performance, and conversion-focused structure.",
+    "primaryCta": { "label": "Start your project", "href": "#contact" },
+    "secondaryCta": { "label": "Call 70-126177", "href": "tel:70-126177" }
+  },
+  "stats": [
+    { "value": "Brand + Web", "label": "Strategy-led digital delivery" },
+    { "value": "Mobile-first", "label": "Built for modern customer journeys" },
+    { "value": "Jounieh", "label": "Local access, polished execution" }
+  ],
+  "socialProof": [
+    "Brand identity that feels premium",
+    "Websites built to convert",
+    "Ads and content that support growth"
+  ],
+  "services": [
+    {
+      "title": "Branding and Visual Identity",
+      "summary": "Sharper brand direction for businesses that need to look professional, memorable, and ready to compete.",
+      "outcomes": ["Brand clarity", "Premium visual system", "Consistent digital presence"]
+    },
+    {
+      "title": "Websites and Progressive Web Apps",
+      "summary": "Fast, installable, mobile-first websites that combine polished design with strong usability and lead capture.",
+      "outcomes": ["Responsive UI", "PWA-ready experience", "Conversion-led page structure"]
+    },
+    {
+      "title": "Social Media and Campaign Content",
+      "summary": "Creative assets and marketing visuals designed to make your business look stronger across social, web, and ads.",
+      "outcomes": ["Campaign visuals", "Ad-ready creative", "Content consistency"]
+    },
+    {
+      "title": "Digital Strategy and Conversion Support",
+      "summary": "Practical guidance for businesses that need cleaner messaging, better structure, and stronger calls to action.",
+      "outcomes": ["Stronger offers", "Clearer customer flow", "Better lead intent"]
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Business Launch Presence",
+      "category": "Brand + Website System",
+      "summary": "A complete launch-ready presence for a growing business that needed branding, website clarity, and a stronger first impression.",
+      "impact": ["Stronger trust from first visit", "Cleaner service positioning", "Clear next-step CTA"],
+      "ctaLabel": "Build my launch presence",
+      "ctaHref": "#contact"
+    },
+    {
+      "title": "Mobile-First Service Site",
+      "category": "Website + Lead Capture",
+      "summary": "A service business experience designed for faster mobile browsing, stronger credibility, and easier contact conversion.",
+      "impact": ["Faster mobile decision flow", "Better CTA visibility", "More qualified inquiries"],
+      "ctaLabel": "Plan my website",
+      "ctaHref": "#contact"
+    },
+    {
+      "title": "Campaign Content Refresh",
+      "category": "Social + Ad Creative",
+      "summary": "Refocused a brand's digital content into a cleaner system for social media, paid campaigns, and website consistency.",
+      "impact": ["More cohesive brand image", "Stronger ad presentation", "Cleaner message across channels"],
+      "ctaLabel": "Upgrade my brand content",
+      "ctaHref": "#contact"
+    }
+  ],
+  "about": {
+    "headline": "We make businesses look sharper, feel more credible, and convert with more confidence.",
+    "description": "eyedeaz blends brand thinking, UX structure, and modern web execution to create digital experiences that are clean, persuasive, and built to move customers to action.",
+    "pillars": [
+      {
+        "title": "Clarity over noise",
+        "description": "We strip away weak messaging and clutter so your business communicates value faster and more clearly."
+      },
+      {
+        "title": "Design with purpose",
+        "description": "Every visual choice should support trust, readability, and action rather than decoration without direction."
+      },
+      {
+        "title": "Growth-minded execution",
+        "description": "We build digital systems that support real business goals like visibility, credibility, and better lead generation."
+      }
+    ],
+    "process": [
+      "Discover the offer, audience, and strongest conversion angle",
+      "Design the brand and digital experience around that strategy",
+      "Build, refine, launch, and support the next growth step"
+    ],
+    "testimonials": [
+      {
+        "quote": "The brand finally looked as strong online as it felt in real life.",
+        "author": "Business owner"
+      },
+      {
+        "quote": "Everything became clearer, cleaner, and easier for customers to trust.",
+        "author": "Founder"
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Let’s build a digital presence that customers notice and trust.",
+    "description": "Tell us what you need, from branding to websites to campaign content, and we will reply with the clearest next step for your business."
+  }
+}

@@ -1,0 +1,9 @@
+process.env.VITEST = 'true';
+process.env.NODE_ENV = 'test';
+process.env.PORT = process.env.PORT ?? '4174';
+process.env.ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS ?? 'http://localhost:4173';
+process.env.SESSION_SECRET = process.env.SESSION_SECRET ?? 'test-session-secret-0123456789abcdef';
+process.env.SUPABASE_URL = process.env.SUPABASE_URL ?? 'https://example.supabase.co';
+process.env.SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ?? 'test-service-role-key';
+process.env.SUPABASE_LEADS_TABLE = process.env.SUPABASE_LEADS_TABLE ?? 'leads';
+process.env.GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? 'test-gemini-key';
