@@ -10,8 +10,26 @@ import siteContent from './content/site-content.json';
 import { trackEvent } from './lib/analytics';
 
 export default function App() {
+  const debugEnabled =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('debug') === '1';
+
+  const debugInfo =
+    typeof window !== 'undefined'
+      ? {
+          href: window.location.href,
+          referrer: document.referrer || '(empty)',
+          isFramed: window.top !== window.self,
+          userAgent: navigator.userAgent,
+        }
+      : null;
+
   useEffect(() => {
     trackEvent('page_view');
+
+    if (debugInfo) {
+      console.info('eyedeaz-debug', debugInfo);
+    }
   }, []);
 
   return (
@@ -19,6 +37,22 @@ export default function App() {
       <a href="#contact" className="skip-link">
         Skip to contact
       </a>
+
+      {debugEnabled && debugInfo ? (
+        <aside className="debug-banner">
+          <p className="debug-title">Debug Mode</p>
+          <p>
+            <strong>href:</strong> {debugInfo.href}
+          </p>
+          <p>
+            <strong>referrer:</strong> {debugInfo.referrer}
+          </p>
+          <p>
+            <strong>isFramed:</strong> {String(debugInfo.isFramed)}
+          </p>
+          <p className="debug-hint">Open DevTools Console and look for `eyedeaz-debug`.</p>
+        </aside>
+      ) : null}
 
       <Navbar items={siteContent.navigation} />
       <InstallPrompt />

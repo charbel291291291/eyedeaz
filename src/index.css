@@ -203,6 +203,18 @@
   .mobile-cta-bar {
     @apply fixed inset-x-4 bottom-4 z-40 flex gap-3 rounded-[1.7rem] border border-white/10 bg-slate-950/85 p-3 shadow-[0_18px_50px_rgba(15,23,42,0.42)] backdrop-blur-xl;
   }
+
+  .debug-banner {
+    @apply fixed left-4 right-4 top-4 z-[110] rounded-3xl border border-amber-300/30 bg-slate-950/95 p-4 text-xs leading-6 text-amber-100 shadow-[0_18px_50px_rgba(15,23,42,0.42)] backdrop-blur-xl md:left-auto md:right-6 md:max-w-xl;
+  }
+
+  .debug-title {
+    @apply mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-amber-200;
+  }
+
+  .debug-hint {
+    @apply mt-2 text-amber-200/85;
+  }
 }
 
 @media (max-width: 767px) {
