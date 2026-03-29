@@ -1,5 +1,5 @@
-const STATIC_CACHE = 'eyedeaz-static-v1';
-const RUNTIME_CACHE = 'eyedeaz-runtime-v1';
+const STATIC_CACHE = 'eyedeaz-static-v2';
+const RUNTIME_CACHE = 'eyedeaz-runtime-v2';
 const OFFLINE_URL = '/offline.html';
 
 const STATIC_ASSETS = [

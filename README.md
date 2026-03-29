@@ -6,7 +6,6 @@ Performance-first agency website and installable PWA built with React, Vite, Exp
 
 - Premium agency positioning site
 - Real lead capture flow backed by Supabase
-- Optional, rate-limited AI concept demo
 - Offline-capable PWA shell with install prompt
 - Production-minded frontend and backend separation
 
@@ -43,8 +42,31 @@ The local server runs the frontend and API layer together on `http://localhost:3
 
 ## Quality checks
 
-- `npm run lint`
+- `npm run validate:restricted`
+- `npm run test`
 - `npm run build`
+
+## Restricted environments
+
+Some sandboxed or locked-down environments block `esbuild` subprocess execution and cause Vite or Vitest to fail with `spawn EPERM`. In those environments, use the fallback validation path:
+
+- `npm run validate:restricted`
+
+This runs:
+
+- `npm run lint`
+- `npm run typecheck`
+
+Use CI for the full validation path:
+
+- `npm run test`
+- `npm run build`
+
+If `vite build` or `vitest` fail locally with `spawn EPERM`, the recommended workflow is:
+
+1. Run `npm run validate:restricted` locally
+2. Push your branch
+3. Let GitHub Actions run the full Vite/Vitest/build pipeline
 
 ## Production notes
 
