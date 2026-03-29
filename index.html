@@ -20,6 +20,41 @@
     <meta property="og:image" content="/eyedeaz-logo.png" />
     <meta name="theme-color" content="#020617" />
     <link rel="icon" type="image/png" href="/eyedeaz-logo.png" />
+    <script>
+      (function () {
+        var MAIN_URL = 'https://eyedeaz227.vercel.app/';
+        var isLocal =
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1';
+
+        if (window.location.protocol === 'http:' && !isLocal) {
+          window.location.replace(
+            'https://' +
+              window.location.host +
+              window.location.pathname +
+              window.location.search +
+              window.location.hash,
+          );
+          return;
+        }
+
+        if (window.top !== window.self) {
+          try {
+            window.top.location.href = MAIN_URL;
+          } catch (error) {
+            window.location.replace(MAIN_URL);
+          }
+          return;
+        }
+
+        if (
+          window.location.hostname.endsWith('.vercel.app') &&
+          window.location.hostname !== 'eyedeaz227.vercel.app'
+        ) {
+          window.location.replace(MAIN_URL);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
